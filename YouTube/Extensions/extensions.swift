@@ -31,17 +31,17 @@ extension UIColor{
     }
 }
 
-extension MutableCollection where Index == Int {
-    mutating func shuffle() {
-        if count < 2 { return }
-        for i in startIndex ..< endIndex - 1 {
-            let j = Int(arc4random_uniform(UInt32(endIndex - i))) + i
-            if i != j {
-                self.swapAt(i, j)
-            }
-        }
-    }
-}
+//extension MutableCollection where Index == Int {
+//    mutating func shuffle() {
+//        if count < 2 { return }
+//        for i in startIndex ..< endIndex - 1 {
+//            let j = Int(arc4random_uniform(UInt32(endIndex - i))) + i
+//            if i != j {
+//                self.swapAt(i, j)
+//            }
+//        }
+//    }
+//}
 
 extension Int {
     func secondsToFormattedString() -> String {
