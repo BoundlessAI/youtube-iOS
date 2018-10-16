@@ -24,6 +24,9 @@
 		22B7F9E01D478BF9008C427D /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B7F9DF1D478BF9008C427D /* Video.swift */; };
 		22BD93601D3394A200CD57A5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22BD935F1D3394A200CD57A5 /* User.swift */; };
 		22FD9CF41EDEDF200025B02F /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22FD9CF31EDEDF200025B02F /* PlayerView.swift */; };
+		84BE69342175C87000289D4D /* Sesame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BE69332175C87000289D4D /* Sesame.framework */; };
+		84BE69362175C8A700289D4D /* Sesame+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BE69352175C8A700289D4D /* Sesame+Utilities.swift */; };
+		84BE69382175C96600289D4D /* Sesame.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84BE69372175C96600289D4D /* Sesame.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		22B7F9DF1D478BF9008C427D /* Video.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Video.swift; path = Model/Video.swift; sourceTree = "<group>"; };
 		22BD935F1D3394A200CD57A5 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = User.swift; path = Model/User.swift; sourceTree = "<group>"; };
 		22FD9CF31EDEDF200025B02F /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PlayerView.swift; path = "Supporting views/PlayerView.swift"; sourceTree = "<group>"; };
+		84BE69332175C87000289D4D /* Sesame.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sesame.framework; path = Carthage/Build/iOS/Sesame.framework; sourceTree = "<group>"; };
+		84BE69352175C8A700289D4D /* Sesame+Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Sesame+Utilities.swift"; sourceTree = "<group>"; };
+		84BE69372175C96600289D4D /* Sesame.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Sesame.plist; path = ../../keys/Youtube/Sesame.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BE69342175C87000289D4D /* Sesame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +121,7 @@
 			children = (
 				22AA44651D1302FB00CA6185 /* YouTube */,
 				22AA44641D1302FB00CA6185 /* Products */,
+				84BE69322175C87000289D4D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				22AA44661D1302FC00CA6185 /* AppDelegate.swift */,
+				84BE69352175C8A700289D4D /* Sesame+Utilities.swift */,
+				84BE69372175C96600289D4D /* Sesame.plist */,
 				22AA446A1D1302FC00CA6185 /* Main.storyboard */,
 				22AA446D1D1302FC00CA6185 /* Assets.xcassets */,
 				2229DC541D1EEA2E0058E804 /* ViewControllers */,
@@ -138,6 +148,14 @@
 				2241B9341D22821600A8167B /* Helpers */,
 			);
 			path = YouTube;
+			sourceTree = "<group>";
+		};
+		84BE69322175C87000289D4D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				84BE69332175C87000289D4D /* Sesame.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +168,7 @@
 				22AA445F1D1302FB00CA6185 /* Sources */,
 				22AA44601D1302FB00CA6185 /* Frameworks */,
 				22AA44611D1302FB00CA6185 /* Resources */,
+				84BE69312175C80B00289D4D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -202,6 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BE69382175C96600289D4D /* Sesame.plist in Resources */,
 				22AA446E1D1302FC00CA6185 /* Assets.xcassets in Resources */,
 				22449DE71D315E3900F3F39D /* LauchVIew.xib in Resources */,
 				22AA446C1D1302FC00CA6185 /* Main.storyboard in Resources */,
@@ -209,6 +229,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		84BE69312175C80B00289D4D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Sesame.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Sesame.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		22AA445F1D1302FB00CA6185 /* Sources */ = {
@@ -229,6 +271,7 @@
 				220E5E1E1D2E7C92001E60A3 /* AccountVC.swift in Sources */,
 				2286206D1EC83B9300E82CFF /* TabBarView.swift in Sources */,
 				22856CA51ECF4E3000474209 /* TrendingVC.swift in Sources */,
+				84BE69362175C8A700289D4D /* Sesame+Utilities.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +399,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: haik@mexonis.com (GZ4E237K2F)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = P6GDVV24N5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = YouTube/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.haik.YouTube;
@@ -374,6 +421,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: haik@mexonis.com (GZ4E237K2F)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = P6GDVV24N5;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = YouTube/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.haik.YouTube;
